@@ -200,15 +200,23 @@ Remove one tag (e.g., phoneNo)
 1. IAM Policy Creation
    
   <img width="1854" height="1048" alt="Image" src="https://github.com/user-attachments/assets/60bd621c-2d79-42c2-8fc6-a3264350c922" />
+  
+---
 
 2. IAM User Permissions
 
+  <img width="1854" height="1048" alt="Image" src="https://github.com/user-attachments/assets/cd158228-361e-4587-a221-d3d6798ed923" />
+
+  ---
 
 3. EC2 Launch Success
 
+  <img width="1854" height="1048" alt="Image" src="https://github.com/user-attachments/assets/8ce9c1fe-19d3-4c5f-adc2-1d652d1483ec" />
 
+---
 
 4. EC2 Launch Failure
 
+<img width="1854" height="1048" alt="Image" src="https://github.com/user-attachments/assets/79e5c684-1508-4f0d-8576-c645f05450aa" />
 
-
+---
