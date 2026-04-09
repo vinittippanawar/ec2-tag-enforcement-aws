@@ -199,7 +199,7 @@ Remove one tag (e.g., phoneNo)
 
 1. IAM Policy Creation
    
-  
+  <img width="1854" height="1048" alt="Image" src="https://github.com/user-attachments/assets/60bd621c-2d79-42c2-8fc6-a3264350c922" />
 
 2. IAM User Permissions
 
