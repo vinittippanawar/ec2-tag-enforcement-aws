@@ -152,14 +152,15 @@ The following IAM policy ensures that EC2 instances cannot be launched unless al
 # ⭐ Step 1: Create IAM User
 - Create IAM user: ec2-tag-user
 - Enable console access
-
+--- 
 # ⭐ Step 2: Attach Policies
 
 Attach:
 
-AmazonEC2FullAccess
-EC2-Tag-Enforcement (custom policy)
+- AmazonEC2FullAccess
 
+- EC2-Tag-Enforcement (custom policy)
+---
 # ⭐ Step 3: Launch EC2 WITH Tags
 
 - Add the following tags:
@@ -174,7 +175,7 @@ Place = Pune
 
 EC2 instance launches successfully.
 
-
+---
 # ⭐ Step 4: Launch EC2 WITHOUT Tags
 
 Remove one tag (e.g., phoneNo)
@@ -197,8 +198,8 @@ Remove one tag (e.g., phoneNo)
 # 📸 Screenshots
 
 1. IAM Policy Creation
-
-
+   
+  
 
 2. IAM User Permissions
 
