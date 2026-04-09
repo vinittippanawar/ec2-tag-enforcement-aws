@@ -51,3 +51,163 @@ IAM Policy Validation
 ❌ If tags missing → Launch Denied
 
 ```
+
+## 🏷️ Mandatory Tags
+
+- The following tags are required during EC2 launch:
+
+
+| Tag Key | Example Value                             |
+| ------- | ----------------------------------------- |
+| Name    | Vinit                                     |
+| emailID | [vinit@gmail.com](mailto:vinit@gmail.com) |
+| phoneNo | 9876543210                                |
+| Place   | Pune                                      |
+
+---
+
+## 🛠️ AWS Services Used
+- AWS IAM (Identity and Access Management)
+- Amazon EC2 (Elastic Compute Cloud)
+
+---
+
+## 🔐 IAM Policy Enforcement
+
+The following IAM policy ensures that EC2 instances cannot be launched unless all required tags are provided.
+
+```
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "AllowRunInstances",
+      "Effect": "Allow",
+      "Action": "ec2:RunInstances",
+      "Resource": "*"
+    },
+    {
+      "Sid": "AllowCreateTagsDuringLaunch",
+      "Effect": "Allow",
+      "Action": "ec2:CreateTags",
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "ec2:CreateAction": "RunInstances"
+        }
+      }
+    },
+    {
+      "Sid": "DenyIfNameMissing",
+      "Effect": "Deny",
+      "Action": "ec2:RunInstances",
+      "Resource": "arn:aws:ec2:*:*:instance/*",
+      "Condition": {
+        "Null": {
+          "aws:RequestTag/Name": "true"
+        }
+      }
+    },
+    {
+      "Sid": "DenyIfEmailMissing",
+      "Effect": "Deny",
+      "Action": "ec2:RunInstances",
+      "Resource": "arn:aws:ec2:*:*:instance/*",
+      "Condition": {
+        "Null": {
+          "aws:RequestTag/emailID": "true"
+        }
+      }
+    },
+    {
+      "Sid": "DenyIfPhoneMissing",
+      "Effect": "Deny",
+      "Action": "ec2:RunInstances",
+      "Resource": "arn:aws:ec2:*:*:instance/*",
+      "Condition": {
+        "Null": {
+          "aws:RequestTag/phoneNo": "true"
+        }
+      }
+    },
+    {
+      "Sid": "DenyIfPlaceMissing",
+      "Effect": "Deny",
+      "Action": "ec2:RunInstances",
+      "Resource": "arn:aws:ec2:*:*:instance/*",
+      "Condition": {
+        "Null": {
+          "aws:RequestTag/Place": "true"
+        }
+      }
+    }
+  ]
+}
+```
+
+---
+
+## 🚀 Implementation Steps
+
+# ⭐ Step 1: Create IAM User
+- Create IAM user: ec2-tag-user
+- Enable console access
+
+# ⭐ Step 2: Attach Policies
+
+Attach:
+
+AmazonEC2FullAccess
+EC2-Tag-Enforcement (custom policy)
+
+# ⭐ Step 3: Launch EC2 WITH Tags
+
+- Add the following tags:
+```
+Name = Vinit
+emailID = vinit@gmail.com
+phoneNo = 9876543210
+Place = Pune
+```
+
+✅ Result:
+
+EC2 instance launches successfully.
+
+
+# ⭐ Step 4: Launch EC2 WITHOUT Tags
+
+Remove one tag (e.g., phoneNo)
+
+❌ Result:
+
+- Launch fails with authorization error
+---
+
+# 🧪 Test Results
+
+| Test Case         | Result    |
+| ----------------- | --------- |
+| All tags provided | ✅ Success |
+| One tag missing   | ❌ Failed  |
+| No tags           | ❌ Failed  |
+
+---
+
+# 📸 Screenshots
+
+1. IAM Policy Creation
+
+
+
+2. IAM User Permissions
+
+
+3. EC2 Launch Success
+
+
+
+4. EC2 Launch Failure
+
+
+
