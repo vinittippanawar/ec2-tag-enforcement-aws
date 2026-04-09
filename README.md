@@ -220,3 +220,22 @@ Remove one tag (e.g., phoneNo)
 <img width="1854" height="1048" alt="Image" src="https://github.com/user-attachments/assets/79e5c684-1508-4f0d-8576-c645f05450aa" />
 
 ---
+
+# 🧠 Key Learnings
+- IAM policies can enforce governance rules
+- aws:RequestTag is used for tag validation
+- Deny rules override allow permissions
+- EC2 launch involves multiple resources (instance, network interface, volume)
+- Proper policy scoping is critical
+---
+
+# 🏁 Conclusion
+
+- This project successfully enforces mandatory tagging for EC2 instances using IAM policies.
+
+✔ Improves governance
+✔ Enables cost tracking
+✔ Prevents misconfigured resources
+✔ Demonstrates real-world AWS security practices
+
+---
