@@ -233,9 +233,9 @@ Remove one tag (e.g., phoneNo)
 
 - This project successfully enforces mandatory tagging for EC2 instances using IAM policies.
 
-✔ Improves governance
-✔ Enables cost tracking
-✔ Prevents misconfigured resources
-✔ Demonstrates real-world AWS security practices
+- ✔ Improves governance
+- ✔ Enables cost tracking
+- ✔ Prevents misconfigured resources
+- ✔ Demonstrates real-world AWS security practices
 
 ---
