@@ -49,9 +49,12 @@ IAM Policy Validation
         ↓
 ✔ If tags present → Instance Launch Allowed
 ❌ If tags missing → Launch Denied
-
 ```
+## 📸  ARCHITECTURE IMAGE
 
+<img width="1536" height="1024" alt="Image" src="https://github.com/user-attachments/assets/781b17c3-5cfe-4795-8e94-89dd3e7f35fd" />
+
+---
 ## 🏷️ Mandatory Tags
 
 - The following tags are required during EC2 launch:
